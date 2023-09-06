@@ -1,6 +1,7 @@
 import { SearchIcon } from "../Icons/Icons";
 import userImg from "../Images/userImg.png";
 import MovieImg from "../Images/MovieImg.png";
+import { useState } from "react";
 
 const movie = [
   {
@@ -66,6 +67,19 @@ const movie = [
 ];
 
 function Movies() {
+  const [searchInput, setSearchInput] = useState("");
+  const [filteredMovies, setFilteredMovies] = useState([]);
+
+  const handleSearchInputChange = (event) => {
+    const input = event.target.value;
+    setSearchInput(input);
+
+    const filtered = movie.filter((m) =>
+      m.M_name.toLowerCase().includes(input.toLowerCase())
+    );
+    setFilteredMovies(filtered);
+  };
+
   return (
     <div className="bg-[#242b30] min-h-screen">
       <div id="Searchbar" className="text-white">
@@ -82,6 +96,8 @@ function Movies() {
                     name="Searchbar"
                     placeholder="Search movies"
                     className="p-2 bg-[#eb5356] text-white placeholder:text-white"
+                    value={searchInput}
+                    onChange={handleSearchInputChange}
                   />
                 </span>
               </div>
@@ -107,33 +123,61 @@ function Movies() {
         <div id="movies">
           <div className="flex justify-center mb-5 md:mb-0">
             <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 lg:grid-cols-5 lg:gap-x-12 lg:gap-y-6">
-              {movie.map((i) => (
-                <div
-                  key={i.M_name}
-                  className="h-64 w-60 md:h-64 md:w-36 cursor-pointer text-white drop-shadow-xl flex flex-col"
-                >
-                  <div className="rounded-t-lg mb-2 shadow-2xl">
-                    <img
-                      src={i.M_img}
-                      className="object-fill h-44 md:h-52 w-full "
-                      alt="img"
-                    />
-                  </div>
-                  <div className="flex justify-between">
-                    <div className="flex flex-col text-xs">
-                      <span className="font-medium">{i.M_name}</span>
-                      <span className="text-[10px] text-[#6b7f90]">
-                        {i.M_category}
-                      </span>
+              {searchInput === ""
+                ? movie.map((i) => (
+                    <div
+                      key={i.M_name}
+                      className="h-64 w-60 md:h-64 md:w-36 cursor-pointer text-white drop-shadow-xl flex flex-col"
+                    >
+                      <div className="rounded-t-lg mb-2 shadow-2xl">
+                        <img
+                          src={i.M_img}
+                          className="object-fill h-44 md:h-52 w-full "
+                          alt="img"
+                        />
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex flex-col text-xs">
+                          <span className="font-medium">{i.M_name}</span>
+                          <span className="text-[10px] text-[#6b7f90]">
+                            {i.M_category}
+                          </span>
+                        </div>
+                        <div className="flex items-center">
+                          <span className="text-xs py-[2px] px-2 rounded-lg text-black bg-[#f4c519] mr-2">
+                            {i.M_rating}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                    <div className="flex items-center">
-                      <span className="text-xs py-[2px] px-2 rounded-lg text-black bg-[#f4c519] mr-2">
-                        8.5
-                      </span>
+                  ))
+                : filteredMovies.map((i) => (
+                    <div
+                      key={i.M_name}
+                      className="h-64 w-60 md:h-64 md:w-36 cursor-pointer text-white drop-shadow-xl flex flex-col"
+                    >
+                      <div className="rounded-t-lg mb-2 shadow-2xl">
+                        <img
+                          src={i.M_img}
+                          className="object-fill h-44 md:h-52 w-full "
+                          alt="img"
+                        />
+                      </div>
+                      <div className="flex justify-between">
+                        <div className="flex flex-col text-xs">
+                          <span className="font-medium">{i.M_name}</span>
+                          <span className="text-[10px] text-[#6b7f90]">
+                            {i.M_category}
+                          </span>
+                        </div>
+                        <div className="flex items-center">
+                          <span className="text-xs py-[2px] px-2 rounded-lg text-black bg-[#f4c519] mr-2">
+                            {i.M_rating}
+                          </span>
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  ))}
             </div>
           </div>
         </div>

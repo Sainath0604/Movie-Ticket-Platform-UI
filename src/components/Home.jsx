@@ -18,7 +18,7 @@ function Home() {
             handleComponentChange={handleComponentChange}
           />
         </div>
-        <div className=" md:w-[85%]">
+        <div className="border-l border-gray-600 md:w-[85%]">
           {activeComponent === "Dashboard" && <Dashboard />}
           {activeComponent === "Movies" && <Movies />}
         </div>

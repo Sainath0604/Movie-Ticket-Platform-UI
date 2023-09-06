@@ -1,19 +1,53 @@
 import { Disclosure } from "@headlessui/react";
-import { DownArrowIcon } from "../Icons/Icons";
+import { DownArrowIcon, TickIcon } from "../Icons/Icons";
+import MovieImg from "../Images/MovieImg.png";
+import userImg from "../Images/userImg.png";
+import "../Style/component.css";
 
 const Movies = [
-  { M_name: "", M_suff: "", M_desc: "", U_src: "", U_name: "" },
-  { M_name: "", M_suff: "", M_desc: "", U_src: "", U_name: "" },
-  { M_name: "", M_suff: "", M_desc: "", U_src: "", U_name: "" },
-  { M_name: "", M_suff: "", M_desc: "", U_src: "", U_name: "" },
+  {
+    M_img: MovieImg,
+    M_name: "AVATAR",
+    M_suff: "The way of the water",
+    U_img: userImg,
+    U_name: "Ikato.t",
+  },
+  {
+    M_img: MovieImg,
+    M_name: "AVATAR",
+    M_suff: "The way of the water",
+    U_img: userImg,
+    U_name: "Ikato.t",
+  },
+  {
+    M_img: MovieImg,
+    M_name: "AVATAR",
+    M_suff: "The way of the water",
+    U_img: userImg,
+    U_name: "Ikato.t",
+  },
+  {
+    M_img: MovieImg,
+    M_name: "AVATAR",
+    M_suff: "The way of the water",
+    U_img: userImg,
+    U_name: "Ikato.t",
+  },
 ];
 
 function Feed() {
   return (
-    <div className="flex flex-col gap-4 px-16">
-      <div className="flex justify-between text-white py-10">
-        <span className="text-xl font-semibold">Continue Watching</span>
-        <span>
+    <div className="flex flex-col gap-4 px-4 md:px-16">
+      <div className="flex flex-col md:flex-row md:justify-between text-white pt-5">
+        <div className="flex items-center lg:gap-20 mb-4 md:mb-0">
+          <span className="text-base md:text-xl font-semibold">
+            Continue Watching
+          </span>
+          <div>
+            <input className="slider" type="range" min="0" max="11" />
+          </div>
+        </div>
+        <div>
           <Disclosure>
             {({ open }) => (
               <>
@@ -28,19 +62,62 @@ function Feed() {
                 <Disclosure.Panel className="px-4 pb-2 text-sm text-gray-500 border border-gray-600 rounded-lg">
                   <ul className="flex flex-col gap-2 text-xs text-gray-500 mt-2">
                     <li className="hover:bg-[#161519] px-4 py-1 rounded-lg">
-                      Latest
+                      <button>Latest</button>
                     </li>
                     <li className="hover:bg-[#161519] px-4 py-1 rounded-lg">
-                      This week
+                      <button>This week</button>
                     </li>
                   </ul>
                 </Disclosure.Panel>
               </>
             )}
           </Disclosure>
-        </span>
+        </div>
       </div>
-      <div></div>
+      <div className="flex justify-center mb-5 md:mb-0">
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-10 lg:grid-cols-4 lg:gap-14">
+          {Movies.map((i) => (
+            <div
+              key={i.M_name}
+              className="h-64 w-60 md:h-52 md:w-48 cursor-pointer rounded-b-xl rounded-t-xl text-white bg-[#141313] drop-shadow-xl"
+            >
+              <div className="rounded-t-lg">
+                <img
+                  src={i.M_img}
+                  className="object-fill h-44 md:h-32 w-full rounded-t-xl"
+                  alt="img"
+                />
+              </div>
+              <div className="flex flex-col gap-1 px-4 py-1">
+                <div className="flex flex-col text-xs">
+                  <span className="font-bold">{i.M_name}</span>
+                  <span className="uppercase">{i.M_suff}</span>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <div>
+                    <img
+                      className="h-7 w-7 rounded-full"
+                      src={i.U_img}
+                      alt="img"
+                    />
+                  </div>
+                  <div className="flex flex-col">
+                    <div className="flex gap-2">
+                      <span className="font-bold text-xs">{i.U_name}</span>
+                      <span className="text-xs text-black px-[2px] py-[1px] rounded-full bg-green-500">
+                        <TickIcon />
+                      </span>
+                    </div>
+                    <span className="text-[10px] font-semibold text-[#414145]">
+                      {i.M_name}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

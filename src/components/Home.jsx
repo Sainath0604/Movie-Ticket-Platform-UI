@@ -4,7 +4,7 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 
 function Home() {
-  const [activeComponent, setActiveComponent] = useState("Movies"); // Initialize the activeComponent state with "Movies"
+  const [activeComponent, setActiveComponent] = useState("Dashboard");
 
   const handleComponentChange = (componentName) => {
     setActiveComponent(componentName);
@@ -12,13 +12,15 @@ function Home() {
   return (
     <div className="m-0 h-screen">
       <div className="flex flex-col lg:flex-row">
-        <Sidebar
-          activeComponent={activeComponent}
-          handleComponentChange={handleComponentChange}
-        />
-        <div className=" md:w-4/5">
-          {activeComponent === "Movies" && <Movies />}
+        <div className="md:w-[15%]">
+          <Sidebar
+            activeComponent={activeComponent}
+            handleComponentChange={handleComponentChange}
+          />
+        </div>
+        <div className=" md:w-[85%]">
           {activeComponent === "Dashboard" && <Dashboard />}
+          {activeComponent === "Movies" && <Movies />}
         </div>
       </div>
     </div>

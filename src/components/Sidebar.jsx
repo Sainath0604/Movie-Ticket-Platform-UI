@@ -1,23 +1,26 @@
 import { Link } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 import PropTypes from "prop-types";
+import userImg from "../Images/userImg.png";
 import {
-  QueIcon,
   TrendingIcon,
-  FilesIcon,
-  ListIcon,
   CrossIcon,
   HamburgerIcon,
   BrowseIcon,
+  UserIcon,
+  VideoIcon,
+  PlayListIcon,
+  WifiIcon,
+  DownArrowIcon,
 } from "../Icons/Icons";
 import MobileSidebar from "./MobileSidebar";
 
 function Sidebar({ activeComponent, handleComponentChange }) {
   return (
-    <div className="md:w-1/5 bg-[#100f12]">
-      <div className="hidden md:block h-screen border-r min-h-screen">
+    <div className=" bg-[#100f12]">
+      <div className="hidden md:block h-screen border-r border-gray-600 min-h-screen">
         <div className="flex flex-col">
-          <div className="flex items-center gap-4 h-20 p-4 text-lg lg:ml-4">
+          <div className="flex items-center gap-4 h-16 p-4 text-lg lg:ml-4">
             <span className="bg-[#9a251d] text-white text-xs font-semibold rounded-full px-2 py-1">
               N
             </span>
@@ -37,15 +40,15 @@ function Sidebar({ activeComponent, handleComponentChange }) {
                   <span className="lg:pl-4 py-2 text-xs font-bold text-[#414145]">
                     News Feed
                   </span>
-                  <div className="flex flex-col gap-2 px-2 mt-2">
-                    <ul className="flex flex-col">
+                  <div className="flex flex-col gap-2 px-4">
+                    <ul className="flex flex-col gap-2 border-b border-gray-600 text-base font-semibold text-white">
                       <li
-                        className={`flex items-center gap-2 py-2 px-4 rounded-md cursor-pointer text-white ${
-                          activeComponent === "Movies"
-                            ? "bg-[#362bd2] text-white"
-                            : "hover:bg-[#362bd2] hover:text-white"
+                        className={`flex items-center gap-4 py-2 px-4 rounded-2xl cursor-pointer text-white ${
+                          activeComponent === "Dashboard"
+                            ? "bg-[#9e2b24] text-white"
+                            : "hover:bg-[#9e2b24] hover:text-white"
                         }`}
-                        onClick={() => handleComponentChange("Movies")}
+                        onClick={() => handleComponentChange("Dashboard")}
                       >
                         <span className="text-xl">
                           <BrowseIcon />
@@ -53,64 +56,139 @@ function Sidebar({ activeComponent, handleComponentChange }) {
                         <span>Browse</span>
                       </li>
                       <li
-                        className={`flex items-center gap-2 py-2 px-4 rounded-md cursor-pointer text-white ${
-                          activeComponent === "Dashboard"
-                            ? "bg-[#362bd2] text-white"
-                            : "hover:bg-[#362bd2] hover:text-white"
+                        className={`flex items-center gap-4 py-2 px-4 rounded-2xl cursor-pointer text-white ${
+                          activeComponent === "Movies"
+                            ? "bg-[#9e2b24] text-white"
+                            : "hover:bg-[#9e2b24] hover:text-white"
                         }`}
-                        onClick={() => handleComponentChange("Dashboard")}
+                        onClick={() => handleComponentChange("Movies")}
                       >
                         <span className="text-xl">
                           <TrendingIcon />
                         </span>
                         <span>Trending</span>
                       </li>
-                      <li className="flex items-center gap-2 hover:bg-[#362bd2] hover:text-white py-2 px-4 rounded-md">
+                      <li className="flex items-center gap-4 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
                         <span className="text-xl">
-                          <FilesIcon />
+                          <UserIcon />
                         </span>
-                        <span className="">File Manager</span>
+                        <span className="">Following</span>
                       </li>
-                      <li className="flex items-center gap-2 hover:bg-[#362bd2] hover:text-white py-2 px-4 rounded-md">
+                      <li className="flex items-center gap-4 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
                         <span className="text-xl">
-                          <ListIcon />
+                          <VideoIcon />
                         </span>
-                        <span className="">Data List</span>
+                        <span className="">Your videos</span>
+                      </li>
+                      <li className="flex items-center gap-4 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl mb-4">
+                        <span className="text-xl">
+                          <PlayListIcon />
+                        </span>
+                        <span className="">Playlist</span>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div className="lg:mt-4 text-xs">
-                  <span className="lg:pl-4 py-2 font-semibold text-gray-700/50">
-                    SECONDARY
+                <div className="text-xs">
+                  <span className="lg:pl-4 py-2 text-xs font-bold text-[#414145]">
+                    Following
                   </span>
-                  <div className="flex flex-col gap-2 px-2 mt-2">
-                    <ul className="flex flex-col">
-                      <li className="flex items-center gap-2 hover:bg-[#362bd2] hover:text-white py-2 px-4 rounded-md">
-                        <span className="text-xl">
-                          <QueIcon />
+                  <div className="flex flex-col gap-2 px-4 mt-2">
+                    <ul className="flex flex-col text-[#414145] border-b border-gray-600">
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
+                        <div className="flex items-center gap-4">
+                          <span className="">
+                            <img
+                              className="h-5 w-5 rounded-full"
+                              src={userImg}
+                              alt="img"
+                            />
+                          </span>
+                          <span className="font-semibold">Ikato.t</span>
+                        </div>
+                        <span className="text-white">
+                          <WifiIcon />
                         </span>
-                        <span className="">Support</span>
                       </li>
-                      <li className="flex items-center gap-2 hover:bg-[#362bd2] hover:text-white py-2 px-4 rounded-md">
-                        <span className="text-xl">
-                          <TrendingIcon />
-                        </span>
-                        <span className="">Inbox</span>
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
+                        <div className="flex items-center gap-4">
+                          <span className="">
+                            <img
+                              className="h-5 w-5 rounded-full"
+                              src={userImg}
+                              alt="img"
+                            />
+                          </span>
+                          <span className="font-semibold">Nick.B</span>
+                        </div>
+                        <span className="bg-green-600 h-1 w-1 rounded-full flex justify-center mr-1"></span>
                       </li>
-                      <li className="flex items-center gap-2 hover:bg-[#362bd2] hover:text-white py-2 px-4 rounded-md">
-                        <span className="text-xl">
-                          <FilesIcon />
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
+                        <div className="flex items-center gap-4">
+                          <span className="">
+                            <img
+                              className="h-5 w-5 rounded-full"
+                              src={userImg}
+                              alt="img"
+                            />
+                          </span>
+                          <span className="font-semibold">Vika.J</span>
+                        </div>
+                        <span className="text-white">
+                          <WifiIcon />
                         </span>
-                        <span className="">File Manager</span>
                       </li>
-                      <li className="flex items-center gap-2 hover:bg-[#362bd2] hover:text-white py-2 px-4 rounded-md">
-                        <span className="text-xl">
-                          <ListIcon />
-                        </span>
-                        <span className="">Data List</span>
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
+                        <div className="flex items-center gap-4">
+                          <span className="">
+                            <img
+                              className="h-5 w-5 rounded-full"
+                              src={userImg}
+                              alt="img"
+                            />
+                          </span>
+                          <span className="font-semibold">Alesanda.B</span>
+                        </div>
+                        <span className="bg-green-600 h-1 w-1 rounded-full flex justify-center mr-1"></span>
+                      </li>
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
+                        <div className="flex items-center gap-4">
+                          <span className="">
+                            <img
+                              className="h-5 w-5 rounded-full"
+                              src={userImg}
+                              alt="img"
+                            />
+                          </span>
+                          <span className="font-semibold">Jessie.J</span>
+                        </div>
+                        <span className="bg-green-600 h-1 w-1 rounded-full flex justify-center mr-1"></span>
+                      </li>
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl">
+                        <div className="flex items-center gap-4">
+                          <span className="">
+                            <img
+                              className="h-5 w-5 rounded-full"
+                              src={userImg}
+                              alt="img"
+                            />
+                          </span>
+                          <span className="font-semibold">Dadd.H</span>
+                        </div>
+                        <span className="bg-green-600 h-1 w-1 rounded-full flex justify-center mr-1"></span>
+                      </li>
+                      <li className="flex items-center justify-between gap-2 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl mb-4">
+                        <div className="flex items-center gap-4">
+                          <span className="w-5 h-5 text-white flex justify-center items-center px-[6px] py-[3px] rounded-full bg-[#9e2b24]">
+                            <DownArrowIcon />
+                          </span>
+                          <span className="font-semibold">Load more</span>
+                        </div>
                       </li>
                     </ul>
+                  </div>
+                  <div className="flex mt-2 h-10 justify-center items-center text-[#414145]">
+                    <span className="text-sm font-semibold">IKAKO Design</span>
                   </div>
                 </div>
               </div>

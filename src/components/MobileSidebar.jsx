@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import userImg from "../Images/userImg.png";
 import {
   TrendingIcon,
@@ -9,7 +10,7 @@ import {
   DownArrowIcon,
 } from "../Icons/Icons";
 
-export default function MobileSidebar() {
+function MobileSidebar({ activeComponent, handleComponentChange }) {
   return (
     <div>
       <div className="mt-5 ">
@@ -20,13 +21,27 @@ export default function MobileSidebar() {
             </span>
             <div className="flex flex-col gap-2 px-4">
               <ul className="flex flex-col gap-2 border-b border-gray-600 text-base font-semibold text-white">
-                <li className="flex items-center gap-4 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl cursor-pointer">
+                <li
+                  className={`flex items-center gap-4 py-2 px-4 rounded-2xl cursor-pointer text-white ${
+                    activeComponent === "Dashboard"
+                      ? "bg-[#9e2b24] text-white"
+                      : "hover:bg-[#9e2b24] hover:text-white"
+                  }`}
+                  onClick={() => handleComponentChange("Dashboard")}
+                >
                   <span className="text-xl">
                     <BrowseIcon />
                   </span>
                   <span>Browse</span>
                 </li>
-                <li className="flex items-center gap-4 hover:bg-[#9e2b24] hover:text-white py-2 px-4 rounded-2xl cursor-pointer">
+                <li
+                  className={`flex items-center gap-4 py-2 px-4 rounded-2xl cursor-pointer text-white ${
+                    activeComponent === "Movies"
+                      ? "bg-[#9e2b24] text-white"
+                      : "hover:bg-[#9e2b24] hover:text-white"
+                  }`}
+                  onClick={() => handleComponentChange("Movies")}
+                >
                   <span className="text-xl">
                     <TrendingIcon />
                   </span>
@@ -162,3 +177,8 @@ export default function MobileSidebar() {
     </div>
   );
 }
+MobileSidebar.propTypes = {
+  activeComponent: PropTypes.string.isRequired,
+  handleComponentChange: PropTypes.func.isRequired,
+};
+export default MobileSidebar;

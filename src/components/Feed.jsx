@@ -1,35 +1,38 @@
 import { Disclosure } from "@headlessui/react";
 import { DownArrowIcon, TickIcon } from "../Icons/Icons";
-import MovieImg from "../Images/MovieImg.png";
+import f1 from "../Images/f1.jpg";
+import f2 from "../Images/f2.jpg";
+import f3 from "../Images/f3.jpeg";
+import f4 from "../Images/f4.jpg";
 import userImg from "../Images/userImg.png";
 import "../Style/component.css";
 
 const Movies = [
   {
-    M_img: MovieImg,
+    M_img: f1,
     M_name: "AVATAR",
     M_suff: "The way of the water",
     U_img: userImg,
     U_name: "Ikato.t",
   },
   {
-    M_img: MovieImg,
-    M_name: "AVATAR",
-    M_suff: "The way of the water",
+    M_img: f2,
+    M_name: "mib 3",
+    M_suff: "men in black 3",
     U_img: userImg,
     U_name: "Ikato.t",
   },
   {
-    M_img: MovieImg,
-    M_name: "AVATAR",
-    M_suff: "The way of the water",
+    M_img: f3,
+    M_name: "spiederman",
+    M_suff: "no way home",
     U_img: userImg,
     U_name: "Ikato.t",
   },
   {
-    M_img: MovieImg,
-    M_name: "AVATAR",
-    M_suff: "The way of the water",
+    M_img: f4,
+    M_name: "MISSION IMPOSSIBLE",
+    M_suff: "The dead reckoning",
     U_img: userImg,
     U_name: "Ikato.t",
   },
@@ -90,7 +93,7 @@ function Feed() {
               </div>
               <div className="flex flex-col gap-1 px-4 py-1">
                 <div className="flex flex-col text-xs">
-                  <span className="font-bold">{i.M_name}</span>
+                  <span className="font-bold uppercase">{i.M_name}</span>
                   <span className="uppercase">{i.M_suff}</span>
                 </div>
                 <div className="flex gap-2 items-center">
@@ -108,7 +111,7 @@ function Feed() {
                         <TickIcon />
                       </span>
                     </div>
-                    <span className="text-[10px] font-semibold text-[#414145]">
+                    <span className="text-[10px] font-semibold text-[#414145] uppercase">
                       {i.M_name}
                     </span>
                   </div>

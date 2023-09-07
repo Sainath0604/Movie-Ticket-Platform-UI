@@ -4,11 +4,15 @@ import { useState } from "react";
 import Sidebar from "./Sidebar";
 
 function Home() {
-  const [activeComponent, setActiveComponent] = useState("Dashboard");
+  const [activeComponent, setActiveComponent] = useState(
+    sessionStorage.getItem("activeComponent") || "Dashboard"
+  );
 
   const handleComponentChange = (componentName) => {
     setActiveComponent(componentName);
+    sessionStorage.setItem("activeComponent", componentName);
   };
+
   return (
     <div className="m-0 h-screen">
       <div className="flex flex-col lg:flex-row">

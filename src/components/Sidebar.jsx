@@ -238,7 +238,10 @@ function Sidebar({ activeComponent, handleComponentChange }) {
             </div>
 
             <Disclosure.Panel className="sm:hidden">
-              <MobileSidebar />
+              <MobileSidebar
+                activeComponent={activeComponent}
+                handleComponentChange={handleComponentChange}
+              />
             </Disclosure.Panel>
           </>
         )}

@@ -2,9 +2,9 @@
 
 ## 🖼️ Main Page Preview:
 
-![11](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/652b1c6b-2d74-4094-b510-fab61e6a1884)
+![11](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/fc2dfe59-a1b8-4fea-a977-9a1df9dc4fd8)
 
-## 🖼️ Movies Page(Search Page) Preview:
+## Movies Page(Search Page) Preview:
 
 ![22](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/cc78e849-82ff-4272-a496-ee32e7b5130a)
 
@@ -45,7 +45,7 @@ npm run dev
 ```
 Following these steps will set up and run the application
 
-### Instructions:
+##Instructions:
 ### Main Page (Page 1)
 
 - This is the landing page of the application.

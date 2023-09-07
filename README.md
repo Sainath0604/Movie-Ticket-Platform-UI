@@ -45,12 +45,12 @@ npm run dev
 ```
 Following these steps will set up and run the application
 
-### Instructions:
-## Main Page (Page 1)
+##Instructions:
+### Main Page (Page 1)
 
 - This is the landing page of the application.
 - It contains a sidebar and a dashboard with relevant information.
-## Movies Page (Search Page) - Page 2
+### Movies Page (Search Page) - Page 2
 
 - This page can be accessed by clicking on the "Trending" button in the sidebar on the Main Page.
 - It is specifically designed for searching and exploring movies.

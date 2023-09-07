@@ -1,1 +1,2 @@
-![movie-ticket-platform-ui](https://raw.githubusercontent.com/Sainath0604/Movie-Ticket-Platform-UI/master/src/Images/MovieImg.png?token=GHSAT0AAAAAACDO4VKVK5TX4XX6BJLZIB44ZHZXVFA/)
+![11](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/652b1c6b-2d74-4094-b510-fab61e6a1884)
+![22](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/cc78e849-82ff-4272-a496-ee32e7b5130a)

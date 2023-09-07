@@ -2,11 +2,12 @@
 
 ## 🖼️ Main Page Preview:
 
-![11](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/fc2dfe59-a1b8-4fea-a977-9a1df9dc4fd8)
+![11](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/8385d066-ac57-4e19-90e5-1aad3ace775a)
 
 ## Movies Page(Search Page) Preview:
 
-![22](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/cc78e849-82ff-4272-a496-ee32e7b5130a)
+![22](https://github.com/Sainath0604/Movie-Ticket-Platform-UI/assets/108300703/58f1ec8c-77b3-4627-8788-017e7205edb4)
+
 
 ## 🖥️ Technologies Used
 

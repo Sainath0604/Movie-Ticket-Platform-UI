@@ -64,7 +64,7 @@ function Movies() {
                 ? movie.map((i) => (
                     <div
                       key={i.M_name}
-                      className="h-80 w-56 md:h-64 md:w-36 cursor-pointer text-white drop-shadow-xl flex flex-col"
+                      className="h-80 w-56 md:h-64 md:w-36 cursor-pointer text-white shadow-md flex flex-col ransition ease-in-out hover:-translate-y-1 hover:scale-105"
                     >
                       <div className="rounded-t-lg mb-2 shadow-2xl">
                         <img

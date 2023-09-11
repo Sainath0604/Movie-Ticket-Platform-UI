@@ -82,7 +82,7 @@ function Feed() {
           {Movies.map((i) => (
             <div
               key={i.M_name}
-              className="h-64 w-60 md:h-52 md:w-48 cursor-pointer rounded-b-xl rounded-t-xl text-white bg-[#141313] drop-shadow-xl"
+              className="h-64 w-60 md:h-52 md:w-48 cursor-pointer rounded-b-xl rounded-t-xl text-white bg-[#141313] shadow-md transition ease-in-out hover:-translate-y-1 hover:scale-100 hover:shadow-red-300/50"
             >
               <div className="rounded-t-lg">
                 <img
